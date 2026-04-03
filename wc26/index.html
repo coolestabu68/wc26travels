@@ -506,6 +506,9 @@ nav {
 .about-section { background:var(--white);padding:80px 52px; }
 .about-layout { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center; }
 .about-stats { display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:28px; }
+
+.about-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+
 .astat { background:var(--light);padding:24px;text-align:center;border:1px solid var(--border); }
 .astat-n { font-family:var(--B);font-size:44px;font-weight:900;color:var(--green);line-height:1;margin-bottom:4px; }
 .astat-l { font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid); }
@@ -721,6 +724,19 @@ footer { background:var(--dark);padding:60px 52px 36px; }
   .pay-grid{grid-template-columns:1fr!important;}
   .city-grid,.why-grid,.testi-grid,.faq-grid{grid-template-columns:1fr!important;}
 
+
+
+  /* ── ABOUT CONTACT SECTION MOBILE ── */
+  .about-contact-section{padding:36px 16px!important;}
+  .about-contact-grid{grid-template-columns:1fr!important;gap:28px!important;}
+  .jm-card{padding:28px 16px!important;}
+  /* ── ABOUT PAGE MOBILE FIXES ── */
+  .about-section{padding:36px 16px!important;}
+  .how-it-works-grid{grid-template-columns:1fr!important;gap:0!important;}
+  .how-it-works-grid > div{border-right:2px solid var(--border)!important;border-bottom:none!important;}
+  .how-it-works-grid > div:not(:last-child){border-bottom:2px solid var(--border)!important;}
+  .about-stats-grid{grid-template-columns:1fr 1fr!important;}
+  .about-layout{gap:24px!important;}
   /* BOOKING/CONTACT FLOW */
   .bk-hero{padding:16px!important;}
   .bk-hero-title{font-size:20px!important;}
@@ -992,6 +1008,21 @@ body { top:0 !important; }
 .field-icon{position:absolute;right:14px;top:38px;font-size:14px;pointer-events:none;}
 .bk-input.valid~.field-icon::after{content:'✓';color:#00A550;}
 .bk-input.invalid~.field-icon::after{content:'✗';color:#E0000A;}
+
+/* ── COOKIE BANNER ── */
+#cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99998;background:#111;border-top:2px solid rgba(170,220,0,0.3);padding:14px 20px;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.4);}
+#cookie-banner.show{display:flex;}
+#cookie-banner .ck-text{flex:1;min-width:200px;}
+#cookie-banner .ck-title{font-family:var(--B);font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;}
+#cookie-banner .ck-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5;}
+#cookie-banner .ck-btns{display:flex;gap:8px;flex-shrink:0;}
+#cookie-banner .ck-decline{background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55);font-family:var(--B);font-size:11px;font-weight:700;padding:8px 16px;cursor:pointer;letter-spacing:.5px;white-space:nowrap;}
+#cookie-banner .ck-accept{background:var(--lime);border:none;color:#000;font-family:var(--B);font-size:11px;font-weight:800;padding:8px 20px;cursor:pointer;letter-spacing:.5px;white-space:nowrap;}
+@media(max-width:480px){
+  #cookie-banner{flex-direction:column!important;align-items:flex-start!important;padding:14px 16px!important;gap:10px!important;}
+  #cookie-banner .ck-btns{width:100%!important;justify-content:flex-end!important;}
+  #cookie-banner .ck-accept,#cookie-banner .ck-decline{flex:1!important;text-align:center!important;padding:10px!important;}
+}
 </style>
 </head>
 <body>
@@ -1018,6 +1049,11 @@ body { top:0 !important; }
 </div>
 
 <!-- TICKER -->
+<div style="background:#E0000A;padding:10px 0;text-align:center;overflow:hidden;">
+  <div style="font-family:var(--C);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;animation:tick 20s linear infinite;white-space:nowrap;display:inline-block;">
+    Last-minute sales phase now open &nbsp;&nbsp;·&nbsp;&nbsp; Ticket prices rising daily &nbsp;&nbsp;·&nbsp;&nbsp; Limited availability remaining &nbsp;&nbsp;·&nbsp;&nbsp; Secure your package today &nbsp;&nbsp;·&nbsp;&nbsp; Last-minute sales phase now open &nbsp;&nbsp;·&nbsp;&nbsp; Ticket prices rising daily &nbsp;&nbsp;·&nbsp;&nbsp; Limited availability remaining &nbsp;&nbsp;·&nbsp;&nbsp; Secure your package today
+  </div>
+</div>
 <div class="ticker">
   <div class="ticker-inner">
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span> FIFA World Cup 2026™ Official Sales Agent</span><span class="tick-sep">·</span>
@@ -1025,13 +1061,13 @@ body { top:0 !important; }
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> FIFA PASS Priority Access</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span> Secure payment via your agent</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure Booking</span><span class="tick-sep">·</span>
-    <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Turkey · Saudi Arabia · UAE · China · Serbia · Gulf</span><span class="tick-sep">·</span>
+    <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Turkey · Saudi Arabia · UAE · France · Algeria · Bosnia · Iraq · Sweden · Israel · Serbia · China · Gulf</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span> FIFA World Cup 2026™ Official Sales Agent</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> 100% Official Ticket Guarantee</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> FIFA PASS Priority Access</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span> Secure payment via your agent</span><span class="tick-sep">·</span>
     <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure Booking</span><span class="tick-sep">·</span>
-    <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Turkey · Saudi Arabia · UAE · China · Serbia · Gulf</span>
+    <span class="tick-item"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Turkey · Saudi Arabia · UAE · France · Algeria · Bosnia · Iraq · Sweden · Israel · Serbia · China · Gulf</span>
   </div>
 </div>
 
@@ -1443,7 +1479,7 @@ body { top:0 !important; }
       <div>
         <div class="ft-name">WC26 TRAVELS</div>
         <div class="ft-sub" data-i18n="ft_sub">World Cup 2026 Travels</div>
-        <p class="ft-desc" data-i18n="ft_desc">Official FIFA World Cup 2026™ licensed sales agent serving fans from Turkey, Saudi Arabia, UAE, China, Serbia, the Balkans, and the Gulf.</p>
+        <p class="ft-desc" data-i18n="ft_desc">Official FIFA World Cup 2026™ licensed sales agent serving fans from France, Algeria, Bosnia, Sweden, Turkey, Iraq, Israel, Saudi Arabia, UAE, Serbia and the Gulf.</p>
         <div class="ft-pay-t" data-i18n="ft_pay">Payment Methods</div>
         <div class="ft-pay-logos">
           
@@ -1473,7 +1509,7 @@ body { top:0 !important; }
       </div>
       <div>
         <div class="ft-h" data-i18n="ft_contact_h">Contact</div>
-        <div class="ft-ci"><span class="ft-cii">✉</span><span class="ft-cit">info@wc26travels.com</span></div>
+        <div class="ft-ci"><span class="ft-cii">✉</span><span class="ft-cit"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc95929a93bc8b9fceca888e9d8a99908fd29f9391">[email&#160;protected]</a></span></div>
         <div class="ft-ci"><span class="ft-cii"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="ft-cit">+1 (917) 780-7011</span></div>
         <div class="ft-ci"><span class="ft-cii">💬</span><span class="ft-cit">WhatsApp: +1 (917) 780-7011</span></div>
       </div>
@@ -1680,7 +1716,26 @@ body { top:0 !important; }
     <div style="text-align:center;margin-top:60px;"><button class="btn-green" onclick="go('packages')">EXPLORE PACKAGES ›</button></div>
   </section>
   <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels.</div><button class="btn-green" onclick="go('contact')">BOOK NOW ›</button></div></footer>
-</div>
+
+      <!-- Group Booking Card -->
+      <div class="pkg-card" style="background:linear-gradient(135deg,#0a0a0a,#1a1a1a);color:var(--white);border:2px solid var(--gold);border-radius:20px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--lime));"></div>
+        <div class="pkg-card-title" style="color:var(--gold);">Group Booking</div>
+        <div class="pkg-card-subtitle" style="color:rgba(255,255,255,.6);">5 or More People</div>
+        <p class="pkg-card-desc">Travelling as a group? We build a fully custom package for your entire party. One booking, one agent, everyone sorted.</p>
+        <div class="pkg-card-label">What you get:</div>
+        <ul class="pkg-card-list">
+          <li>Custom group pricing</li>
+          <li>Single agent for the entire group</li>
+          <li>Group hotel block booking</li>
+          <li>All match tickets secured together</li>
+          <li>Group visa processing</li>
+          <li>Coordinated flights and transfers</li>
+          <li>24/7 dedicated group WhatsApp</li>
+        </ul>
+        <p style="font-size:13px;color:var(--gold);font-weight:700;margin-bottom:16px;">Custom pricing based on group size and destinations</p>
+        <button class="pkg-btn-white" onclick="bookPackage('Group Booking (5+ people)','Custom','0')" style="white-space:nowrap;background:var(--gold);color:#000;border:none;">Enquire for Group →</button>
+      </div></div>
 
 
 <!-- ══════════ VISA ══════════ -->
@@ -1688,7 +1743,7 @@ body { top:0 !important; }
   <div class="ih"><div class="ih-bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=90');"></div><div class="ih-c"><div class="ih-tag">Visa &amp; Travel Documentation</div><h1 class="ih-h">We Handle<br>Your Visa.</h1><p class="ih-s">USA · Canada · Mexico — three countries, three visa systems. You handle the excitement. We handle the paperwork.</p></div></div>
 
   <!-- WHAT WE DO — 3 countries explained -->
-  <section style="background:var(--white);padding:72px 52px;">
+  <section class="about-section" style="background:var(--white);">
     <div style="max-width:700px;margin-bottom:52px;">
       <div style="font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:12px;">The World Cup Spans 3 Countries</div>
       <div class="section-title" style="margin-bottom:16px;">One Tournament.<br><span>Three Visa Systems.</span></div>
@@ -1866,7 +1921,7 @@ body { top:0 !important; }
 
   </section>
 
-  <footer><div class="footer-bottom" style="padding:16px 52px;"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div><button class="btn-green" onclick="go('contact')">APPLY NOW ›</button></div></footer>
+  <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div><button class="btn-green" onclick="go('contact')">APPLY NOW ›</button></div></footer>
 </div>
 
 
@@ -1875,14 +1930,14 @@ body { top:0 !important; }
   <div class="ih"><div class="ih-bg" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1600&q=90');"></div><div class="ih-c"><div class="ih-tag">Our Story</div><h1 class="ih-h">About<br>WC26 Travels</h1><p class="ih-s">Official FIFA World Cup 2026™ licensed sales agent — built to get fans from every corner of the world to the greatest stage in sport.</p></div></div>
 
   <!-- MISSION -->
-  <section style="background:var(--white);padding:72px 52px;">
-    <div class="about-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+  <section class="about-section" style="background:var(--white);">
+    <div class="about-layout">
       <div>
         <div style="font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Who We Are</div>
         <div class="section-title" style="margin-bottom:20px;">Every Fan Deserves<br>to <span>Be There</span></div>
         <p style="font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:18px;">WC26 Travels is an officially licensed FIFA World Cup 2026™ sales agent with exclusive access to the same ticket-inclusive hospitality packages available through FIFA's authorized global network.</p>
         <p style="font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:28px;">We exist to close the gap between wanting to attend and actually getting there — handling visas, flights, hotels, match tickets, and on-ground support for fans across Turkey, the Gulf, China, the Balkans, and beyond.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+        <div class="about-stats-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
           <div style="background:var(--light);border:2px solid var(--border);padding:22px;text-align:center;">
             <div style="font-family:var(--B);font-size:40px;font-weight:900;color:var(--green);line-height:1;">98%</div>
             <div style="font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-top:4px;">Visa Success Rate</div>
@@ -1919,11 +1974,11 @@ body { top:0 !important; }
   </section>
 
   <!-- HOW IT WORKS -->
-  <section style="background:var(--light);padding:72px 52px;border-top:2px solid var(--border);">
+  <section class="about-section" style="background:var(--light);border-top:2px solid var(--border);">
     <div style="font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:12px;">The Process</div>
     <div class="section-title" style="margin-bottom:12px;">From Booking to<br><span>the Final Whistle</span></div>
     <p style="font-size:14px;color:var(--mid);margin-bottom:44px;max-width:560px;">Here's exactly what happens after you select a package — from first contact to standing in the stadium.</p>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;">
+    <div class="how-it-works-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;">
       <div style="border:2px solid var(--border);border-right:none;padding:28px 20px;background:var(--white);position:relative;">
         <div style="width:36px;height:36px;background:var(--green);color:var(--white);font-family:var(--B);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">1</div>
         <div style="font-family:var(--B);font-size:14px;font-weight:800;color:var(--dark);margin-bottom:8px;">Choose Package</div>
@@ -1953,8 +2008,8 @@ body { top:0 !important; }
   </section>
 
   <!-- TEAM / CONTACT CTA -->
-  <section style="background:var(--white);padding:72px 52px;border-top:2px solid var(--border);">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+  <section class="about-section about-contact-section" style="background:var(--white);border-top:2px solid var(--border);">
+    <div class="about-contact-grid">
       <div>
         <div style="font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Your Dedicated Agent</div>
         <div class="section-title" style="margin-bottom:16px;">We're a Message<br><span>Away</span></div>
@@ -1966,7 +2021,7 @@ body { top:0 !important; }
           </div>
           <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--light);border:2px solid var(--border);">
             <span style="font-size:22px;">✉️</span>
-            <div><div style="font-family:var(--B);font-size:13px;font-weight:800;color:var(--dark);">Email</div><div style="font-size:13px;color:var(--mid);">info@wc26travels.com</div></div>
+            <div><div style="font-family:var(--B);font-size:13px;font-weight:800;color:var(--dark);">Email</div><div style="font-size:13px;color:var(--mid);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82ebece4edc2f5e1b0b4f6f0e3f4e7eef1ace1edef">[email&#160;protected]</a></div></div>
           </div>
           <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--light);border:2px solid var(--border);">
             <span style="font-size:22px;">🌍</span>
@@ -1974,7 +2029,7 @@ body { top:0 !important; }
           </div>
         </div>
       </div>
-      <div style="background:var(--dark);padding:40px;text-align:center;">
+      <div class="jm-card" style="background:var(--dark);padding:40px;text-align:center);">
         <div style="width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#0d2010,#1a3a2a);border:3px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:var(--B);font-size:26px;font-weight:900;color:var(--green);">JM</div>
         <div style="font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--lime);margin-bottom:8px;">Your Dedicated Agent</div>
         <div style="font-family:var(--B);font-size:22px;font-weight:900;color:var(--white);margin-bottom:2px;">James Mitchell</div>
@@ -1992,7 +2047,7 @@ body { top:0 !important; }
     </div>
   </section>
 
-  <footer><div class="footer-bottom" style="padding:16px 52px;"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
+  <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
 </div>
 
 
@@ -2059,7 +2114,7 @@ body { top:0 !important; }
 
         <div class="faq-item" onclick="tFaq(this)">
           <div class="faq-q">Where is my payment confirmation?<span class="faq-tog">+</span></div>
-          <div class="faq-a">Confirmation is sent to your email immediately after payment is processed. For any questions about your booking or payment status, WhatsApp our team on +1 (917) 780-7011 or email info@wc26travels.com.</div>
+          <div class="faq-a">Confirmation is sent to your email immediately after payment is processed. For any questions about your booking or payment status, WhatsApp our team on +1 (917) 780-7011 or email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="11787f777e516672232765637067747d623f727e7c">[email&#160;protected]</a>.</div>
         </div>
       </div>
 
@@ -2118,7 +2173,7 @@ body { top:0 !important; }
     </div>
 
   </section>
-  <footer><div class="footer-bottom" style="padding:16px 52px;"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div><button class="btn-green" onclick="go('contact')">BOOK NOW ›</button></div></footer>
+  <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div><button class="btn-green" onclick="go('contact')">BOOK NOW ›</button></div></footer>
 </div>
 
 
@@ -2139,7 +2194,7 @@ body { top:0 !important; }
         <span style="font-size:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
         <div>
           <div style="font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:2px;">Email</div>
-          <div style="font-family:var(--B);font-size:14px;font-weight:800;color:var(--white);">info@wc26travels.com</div>
+          <div style="font-family:var(--B);font-size:14px;font-weight:800;color:var(--white);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="30595e565f704753020644425146555c431e535f5d">[email&#160;protected]</a></div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
@@ -2395,7 +2450,7 @@ body { top:0 !important; }
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Message James on WhatsApp
               </a>
-              <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:10px;">james@wc26travels.com · +1 (917) 780-7011</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:10px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe949f939b8dbe899dccc88a8c9f889b928dd09d9193">[email&#160;protected]</a> · +1 (917) 780-7011</div>
             </div>
             <button class="btn-green" onclick="go('home')" style="padding:12px 28px;">← Back to Home</button>
           </div>
@@ -2444,7 +2499,7 @@ body { top:0 !important; }
         <div style="margin-top:20px;padding:16px;background:var(--light);border:1px solid var(--border);font-size:12px;color:var(--mid);line-height:1.7;">
           <strong style="color:var(--dark);"><span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Direct Contact</strong><br>
           WhatsApp: +1 (917) 780-7011<br>
-          info@wc26travels.com
+          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b7ded9d1d8f7c0d48581c3c5d6c1d2dbc499d4d8da">[email&#160;protected]</a>
         </div>
         <div style="margin-top:12px;padding:14px;background:rgba(0,165,80,.05);border:1px solid rgba(0,165,80,.2);font-size:12px;color:var(--mid);line-height:1.7;text-align:center;">
           <span style="display:inline-flex;align-items:center;justify-content:center;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Your details are safe. James will contact you directly.
@@ -2454,11 +2509,11 @@ body { top:0 !important; }
 
   </div><!-- /bk-body -->
 
-  <footer><div class="footer-bottom" style="padding:16px 52px;"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
+  <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
 </div>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Splash
 setTimeout(()=>{ const s=document.getElementById('splash'); if(s)s.style.display='none'; },3600);
 
@@ -2593,18 +2648,18 @@ async function ciSubmit(){
   const notes=document.getElementById('ci-notes').value||'';
   const ci_travellers = (document.getElementById('ci-travellers')||{}).value||'';
   const waMsg=encodeURIComponent(
-    `NEW ENQUIRY — WC26 TRAVELS` +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
-    `\n📦 PACKAGE: ${pkg}` +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
-    `\n👤 Name: ${name}` +
-    `\n📧 Email: ${email}` +
-    `\n📱 WhatsApp: ${phone}` +
-    `\n🌍 Nationality: ${nat}` +
-    (ci_travellers ? `\n👥 Travellers: ${ci_travellers}` : '') +
-    (city  ? `\n🏟️ Preferred city: ${city}`  : '') +
-    (notes ? `\n📝 Notes/Questions: ${notes}` : '') +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
+    `NEW ENQUIRY - WC26 TRAVELS` +
+    `\n` +
+    `\nPACKAGE: ${pkg}` +
+    `\n` +
+    `\nName: ${name}` +
+    `\nEmail: ${email}` +
+    `\nPhone: ${phone}` +
+    `\nNationality: ${nat}` +
+    (ci_travellers ? `\nTravellers: ${ci_travellers}` : '') +
+    (city  ? `\nPreferred city: ${city}`  : '') +
+    (notes ? `\nNotes: ${notes}` : '') +
+    `\n` +
     `\nSent from wc26travels.com`
   );
   try{
@@ -2761,25 +2816,27 @@ async function bkSubmit(){
   const passport = (document.getElementById('bk-passport')||{}).value||'';
   const usvisa  = (document.getElementById('bk-usvisa')||{}).value||'';
   const travellers = (document.getElementById('bk-travellers')||{}).value||'';
+  const budget = (document.getElementById('bk-budget')||{}).value||'';
   const waMsg = encodeURIComponent(
-    `NEW BOOKING ENQUIRY — WC26 TRAVELS` +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
-    `\n📦 PACKAGE: ${pkg}` +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
-    `\n👤 Name: ${name}` +
-    `\n📧 Email: ${email}` +
-    `\n📱 WhatsApp: ${phone}` +
-    `\n🌍 Nationality: ${nat}` +
-    (travellers ? `\n👥 Travellers: ${travellers}` : '') +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
-    `\n🛂 Passport: ${passport||'Not specified'}` +
-    `\n✈️ Departing from: ${depart||'Not specified'}` +
-    `\n🇺🇸 Has US visa: ${usvisa||'Not specified'}` +
-    (city   ? `\n🏟️ Preferred city: ${city}`   : '') +
-    (flight ? `\n💺 Flight class: ${flight}`    : '') +
-    (team   ? `\n⚽ Supporting: ${team}`        : '') +
-    (notes  ? `\n📝 Notes: ${notes}`            : '') +
-    `\n━━━━━━━━━━━━━━━━━━━━━` +
+    `NEW BOOKING ENQUIRY - WC26 TRAVELS` +
+    `\n` +
+    `\nPACKAGE: ${pkg}` +
+    `\n` +
+    `\nName: ${name}` +
+    `\nEmail: ${email}` +
+    `\nPhone: ${phone}` +
+    `\nNationality: ${nat}` +
+    (travellers ? `\nTravellers: ${travellers}` : '') +
+    (budget ? `\nBudget per person: ${budget}` : '') +
+    `\n` +
+    `\nPassport: ${passport||'Not specified'}` +
+    `\nDeparting from: ${depart||'Not specified'}` +
+    `\nUS visa: ${usvisa||'Not specified'}` +
+    (city   ? `\nPreferred city: ${city}`   : '') +
+    (flight ? `\nFlight class: ${flight}`    : '') +
+    (team   ? `\nSupporting: ${team}`        : '') +
+    (notes  ? `\nNotes: ${notes}`            : '') +
+    `\n` +
     `\nSent from wc26travels.com`
   );
   try{
@@ -2791,23 +2848,38 @@ async function bkSubmit(){
     await fetch('https://formspree.io/f/xzzblpka',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
   }catch(e){}
   // Replace step 3 with confirmation screen
-  document.getElementById('bk-step-3').innerHTML = buildConfirmHTML(name, pkg);
+  document.getElementById('bk-step-3').innerHTML = buildConfirmHTML(name, pkg, phone, nat, depart, usvisa, travellers, city, team, flight, budget, notes);
   window.open(`https://wa.me/19177807011?text=${waMsg}`,'_blank');
 }
 
-function buildConfirmHTML(name, pkg){
+function buildConfirmHTML(name, pkg, phone, nat, depart, usvisa, travellers, city, team, flight, budget, notes){
+  const waText = encodeURIComponent(
+    `Hi James, I just submitted a booking enquiry on WC26 Travels.` +
+    `\nName: ${name}` +
+    `\nPackage: ${pkg}` +
+    (phone ? `\nPhone: ${phone}` : '') +
+    (nat ? `\nNationality: ${nat}` : '') +
+    (travellers ? `\nTravellers: ${travellers}` : '') +
+    (budget ? `\nBudget: ${budget}` : '') +
+    (depart ? `\nDeparting from: ${depart}` : '') +
+    (usvisa ? `\nUS visa: ${usvisa}` : '') +
+    (city ? `\nPreferred city: ${city}` : '') +
+    (team ? `\nSupporting: ${team}` : '') +
+    (flight ? `\nFlight class: ${flight}` : '') +
+    (notes ? `\nNotes: ${notes}` : '')
+  );
   return `
     <div class="bk-confirm-wrap">
       <div class="bk-confirm-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
       <h2 class="bk-confirm-title">Request Received!</h2>
-      <p class="bk-confirm-sub">Thank you <strong>${name}</strong>. Your enquiry for <strong>${pkg}</strong> has been received. Your dedicated specialist will contact you on WhatsApp within 2 hours.</p>
+      <p class="bk-confirm-sub">Thank you <strong>${name}</strong>. Your enquiry for <strong>${pkg}</strong> has been received. James will contact you on WhatsApp within 2 hours.</p>
       <div class="bk-agent-card">
         <div class="bk-agent-badge">YOUR DEDICATED SPECIALIST</div>
         <div class="bk-agent-avatar" style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#0d2010,#1a3a2a);border:3px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:var(--B);font-size:22px;font-weight:900;color:var(--green);">JM</div>
         <div class="bk-agent-name">James Mitchell</div>
         <div class="bk-agent-title">Senior Travel &amp; Visa Specialist · WC26 Travels</div>
         <div class="bk-agent-contact">
-          <a href="https://wa.me/19177807011" target="_blank" class="bk-agent-wa">
+          <a href="https://wa.me/19177807011?text=${waText}" target="_blank" class="bk-agent-wa">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Message James on WhatsApp
           </a>
@@ -3025,7 +3097,7 @@ async function handleSubmit(e){
   const nat=data.get('nationality')||'Not specified';
   const phone=data.get('phone')||'Not provided';
   const payment=data.get('payment')||'Not specified';
-  const waMsg=encodeURIComponent(`Hi, I just submitted an application for ${pkg} on WC26 Travels. My name is ${name}, phone: ${phone}. Please follow up.`);
+  const waMsg=encodeURIComponent(`New application from ${name} for ${pkg} on WC26 Travels. Phone: ${phone}. Please follow up.`);
   try{ await fetch('https://formspree.io/f/xzzblpka',{method:'POST',body:data,headers:{'Accept':'application/json'}}); }catch(err){}
   e.target.style.display='none';
   const suc=document.getElementById('form-success'); if(suc)suc.style.display='block';
@@ -3058,7 +3130,7 @@ const TRANSLATIONS = {
     why_title:'Why Choose <span>WC26 Travels?</span>',why1_t:'Official Tickets',why1_d:'100% guaranteed official FIFA match tickets in every package. Fully authorized by the global organizers.',why2_t:'Flights &amp; Hotels',why2_d:'Economy class flights and hotel accommodation included in all packages, upgradeable to business class.',why3_t:'Visa Handled',why3_d:'Full DS-160, TRV, and FMM applications completed on your behalf with FIFA PASS priority scheduling.',why4_t:'Always Available',why4_d:'Readily available customer service via text, voice call or WhatsApp — 24/7 from booking to final whistle.',why5_t:'FIFA Licensed',why5_d:"Officially licensed sales agent with access to the same exclusive inventory as FIFA's authorized global network.",why6_t:'24/7 Concierge',why6_d:'Dedicated agent from booking to final whistle. On-ground support in all 16 host cities throughout your trip.',
     cta_title:'Your Seat at<br>the Summit',cta_sub:'Official tickets, visa, flights, hotels. Pay with your agent. The greatest show on earth — secure your place.',cta_btn1:'VIEW PACKAGES',cta_btn2:'REGISTER INTEREST',
     testi_title:'What Our <span>Clients Say</span>',testi1:'The Turkish visa alone would have taken over a year. WC26 Travels activated FIFA PASS and I was approved in three weeks. Attending the Final at MetLife Stadium.',testi2:'Booked the Team Series from Riyadh — business class, 5-star hotel in Miami. Our agent James handled everything. A legitimately world-class operation.',testi3:'Serbia qualifying was historic. Elite 8 package — 4 matches, 3 cities. Paid in minutes. Everything handled without a single issue.',
-    ft_sub:'World Cup 2026 Travels',ft_desc:'Official FIFA World Cup 2026™ licensed sales agent serving fans from Turkey, Saudi Arabia, UAE, China, Serbia, the Balkans, and the Gulf.',ft_pay:'Payment Methods',
+    ft_sub:'World Cup 2026 Travels',ft_desc:'Official FIFA World Cup 2026™ licensed sales agent serving fans from France, Algeria, Bosnia, Sweden, Turkey, Iraq, Israel, Saudi Arabia, UAE, Serbia and the Gulf.',ft_pay:'Payment Methods',
     ft_nav_h:'Navigate',ft_pkg_h:'Packages',ft_contact_h:'Contact',
     ft_pkg1:'2 Matches — from $4,200',ft_pkg2:'3 Matches — from $5,800',ft_pkg3:'4 Matches — from $7,500',ft_pkg4:'The Elite 8 — from $12,500',ft_pkg5:'Final Round — from $14,000',ft_pkg6:'Visa Only — from $299',
     lang_label:'Select Language', lang_btn:'<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> &nbsp;Language',
@@ -3627,6 +3699,18 @@ function handleSignup(e){
           <p id="bk-step2-desc" style="font-size:14px;color:var(--mid);margin-bottom:24px;line-height:1.7;">The more detail you provide, the better your agent can tailor your package. All fields are optional but helpful.</p>
 
           <!-- Always shown: passport + departure + US visa question -->
+          <!-- Budget field -->
+          <div class="bk-group" style="margin-bottom:18px;">
+            <label class="bk-label">Budget Per Person (approximate)</label>
+            <select class="bk-select" id="bk-budget">
+              <option value="">Prefer not to say</option>
+              <option value="Under $3,000">Under $3,000</option>
+              <option value="$3,000 - $6,000">$3,000 - $6,000</option>
+              <option value="$6,000 - $10,000">$6,000 - $10,000</option>
+              <option value="$10,000 - $15,000">$10,000 - $15,000</option>
+              <option value="Above $15,000">Above $15,000</option>
+            </select>
+          </div>
           <div class="bk-2col">
             <div class="bk-field">
               <label class="bk-label">Passport Nationality</label>
@@ -3811,7 +3895,7 @@ function handleSignup(e){
 
   </div><!-- /bk-body -->
 
-  <footer><div class="footer-bottom" style="padding:16px 52px;"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
+  <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels. Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
 </div><!-- /booking -->
 
 
@@ -3820,11 +3904,11 @@ function handleSignup(e){
 <div class="page" id="p-terms">
   <div class="ih"><div class="ih-bg" style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1600&q=90');"></div><div class="ih-c"><div class="ih-tag">Legal</div><h1 class="ih-h">Terms &amp;<br>Conditions</h1><p class="ih-s">Please read these terms carefully before booking. By completing a booking you confirm you have read and accepted these terms.</p></div></div>
 
-  <section style="background:var(--white);padding:72px 52px;">
+  <section class="about-section" style="background:var(--white);">
     <div style="max-width:820px;margin:0 auto;">
 
       <!-- Last updated -->
-      <div style="font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:40px;">Last Updated: March 2026 · WC26 Travels · info@wc26travels.com</div>
+      <div style="font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:40px;">Last Updated: March 2026 · WC26 Travels · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="523b3c343d122531606426203324373e217c313d3f">[email&#160;protected]</a></div>
 
       <!-- SECTION 1 -->
       <div style="margin-bottom:44px;">
@@ -3868,7 +3952,7 @@ function handleSignup(e){
             <div style="font-family:var(--B);font-size:14px;font-weight:900;color:var(--red);white-space:nowrap;">No refund</div>
           </div>
         </div>
-        <p style="font-size:13px;color:var(--mid);line-height:1.8;margin-top:16px;">All cancellation requests must be submitted in writing to <strong>info@wc26travels.com</strong>. Refunds, where applicable, are processed within 14 business days. Travel Insurance included in all packages covers certain unforeseen cancellation scenarios — please refer to your policy documentation.</p>
+        <p style="font-size:13px;color:var(--mid);line-height:1.8;margin-top:16px;">All cancellation requests must be submitted in writing to <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="325b5c545d724551000446405344575e411c515d5f">[email&#160;protected]</a></strong>. Refunds, where applicable, are processed within 14 business days. Travel Insurance included in all packages covers certain unforeseen cancellation scenarios — please refer to your policy documentation.</p>
       </div>
 
       <!-- SECTION 4 -->
@@ -3905,7 +3989,7 @@ function handleSignup(e){
       <!-- SECTION 7 -->
       <div style="margin-bottom:44px;">
         <div style="font-family:var(--B);font-size:20px;font-weight:900;color:var(--dark);margin-bottom:6px;padding-bottom:10px;border-bottom:2px solid var(--border);">7. Privacy &amp; Data</div>
-        <p style="font-size:14px;color:var(--mid);line-height:1.85;margin-top:16px;">Personal information collected during the booking process (name, email, phone, nationality) is used solely for the purpose of processing your booking and visa application. We do not sell, rent, or share your data with third parties other than those required to fulfil your booking (airlines, hotels, embassies). Your data is stored securely and in accordance with applicable data protection regulations. To request deletion of your data, contact <strong>info@wc26travels.com</strong>.</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.85;margin-top:16px;">Personal information collected during the booking process (name, email, phone, nationality) is used solely for the purpose of processing your booking and visa application. We do not sell, rent, or share your data with third parties other than those required to fulfil your booking (airlines, hotels, embassies). Your data is stored securely and in accordance with applicable data protection regulations. To request deletion of your data, contact <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31585f575e714652030745435047545d421f525e5c">[email&#160;protected]</a></strong>.</p>
       </div>
 
       <!-- SECTION 8 -->
@@ -3919,7 +4003,7 @@ function handleSignup(e){
         <div style="font-family:var(--B);font-size:20px;font-weight:900;color:var(--dark);margin-bottom:6px;padding-bottom:10px;border-bottom:2px solid var(--border);">9. Contact &amp; Disputes</div>
         <p style="font-size:14px;color:var(--mid);line-height:1.85;margin-top:16px;">For any questions, concerns, or disputes regarding these Terms and Conditions, please contact us in the first instance:</p>
         <div style="background:var(--light);border:2px solid var(--border);border-left:4px solid var(--green);padding:20px 24px;margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:14px;color:var(--dark);"><strong>Email:</strong> info@wc26travels.com</div>
+          <div style="font-size:14px;color:var(--dark);"><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157c7b737a5562762723616774637079663b767a78">[email&#160;protected]</a></div>
           <div style="font-size:14px;color:var(--dark);"><strong>WhatsApp:</strong> +1 (917) 780-7011</div>
           <div style="font-size:14px;color:var(--dark);"><strong>Response time:</strong> Within 2 business days</div>
         </div>
@@ -3935,7 +4019,7 @@ function handleSignup(e){
     </div>
   </section>
 
-  <footer><div class="footer-bottom" style="padding:16px 52px;"><div class="ft-copy">© 2026 WC26 Travels. All rights reserved. · Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
+  <footer><div class="footer-bottom"><div class="ft-copy">© 2026 WC26 Travels. All rights reserved. · Official FIFA World Cup 2026™ Licensed Sales Agent.</div></div></footer>
 </div><!-- /terms -->
 
 
@@ -4346,7 +4430,7 @@ function handleSignup(e){
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ══════════════════════════════════════════════════
 // SUPABASE CONFIG
 // ══════════════════════════════════════════════════
@@ -4781,32 +4865,28 @@ function googleTranslateElementInit() {
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <!-- ── COOKIE CONSENT BANNER ── -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99998;background:#111;border-top:2px solid rgba(170,220,0,0.3);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.4);">
-  <div style="flex:1;min-width:240px;">
-    <div style="font-family:var(--B);font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;">We use cookies</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;">We use essential cookies to keep you logged in and remember your preferences. By continuing to use this site you agree to our use of cookies. <span onclick="go('terms')" style="color:var(--lime);cursor:pointer;text-decoration:underline;">Learn more</span></div>
+<div id="cookie-banner">
+  <div class="ck-text">
+    <div class="ck-title">We use cookies</div>
+    <div class="ck-desc">We use cookies to improve your experience and analyse site traffic. By accepting you agree to our use of cookies.</div>
   </div>
-  <div style="display:flex;gap:10px;flex-shrink:0;">
-    <button onclick="acceptCookies()" style="background:var(--lime);color:#000;font-family:var(--B);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border:none;cursor:pointer;">Accept</button>
-    <button onclick="declineCookies()" style="background:none;color:rgba(255,255,255,.4);font-family:var(--B);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:10px 16px;border:1px solid rgba(255,255,255,.15);cursor:pointer;">Essential Only</button>
+  <div class="ck-btns">
+    <button class="ck-decline" onclick="declineCookies()">Decline</button>
+    <button class="ck-accept" onclick="acceptCookies()">Accept</button>
   </div>
 </div>
-
 <script>
 function acceptCookies(){
   localStorage.setItem('wc26_cookies','accepted');
-  document.getElementById('cookie-banner').style.display='none';
+  document.getElementById('cookie-banner').classList.remove('show');
 }
 function declineCookies(){
-  localStorage.setItem('wc26_cookies','essential');
-  document.getElementById('cookie-banner').style.display='none';
+  localStorage.setItem('wc26_cookies','declined');
+  document.getElementById('cookie-banner').classList.remove('show');
 }
-// Show banner if not yet decided
-window.addEventListener('load', function(){
+document.addEventListener('DOMContentLoaded',function(){
   if(!localStorage.getItem('wc26_cookies')){
-    setTimeout(function(){
-      document.getElementById('cookie-banner').style.display='flex';
-    }, 1500);
+    setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); },1500);
   }
 });
 </script>
